@@ -7,7 +7,6 @@ import os
 
 load_dotenv()
 def get_status(user_id):
-    access_token = os.getenv('token')
     params = {
         'access_token':os.getenv('token'),
         'user_ids':user_id,
