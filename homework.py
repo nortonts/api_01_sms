@@ -21,10 +21,10 @@ def sms_sender(sms_text):
     auth_token = os.getenv('auth_token')
     client = Client(account_sid, auth_token)
     message = client.messages.create(
-                              body=sms_text,
-                              from_='+19286835471',
-                              to='+79651709495'
-                          )
+        body=sms_text,
+        from_=os.getenv('NUMBER_FROM'),
+        to=os.getenv('NUMBER_TO')
+    )
     return message.sid
 
 
